@@ -1,0 +1,11 @@
+$qrysum="SELECT SUM(cart.amt) As total FROM cart";
+        $sumres = mysqli_query($db,$qrysum);
+        $sumrow = mysqli_fetch_array($sumres);
+        $total=$sumrow['total'];
+        if($total>0){
+            echo "<p id='total'>Total Amount: Rs$total</p>";
+            echo "<p id='finish'><a href='cartpass.php'>Make Payment</a></p>";         
+        }
+        else{
+            echo "<p id='total'>No items in the Cart<p>";
+        }

@@ -1,0 +1,24 @@
+   echo "<table border='1'>
+            <tr>
+                <th>PID</th>
+                <th>PNAME</th>
+                <th>QTY</th>
+                <th>PRICE</th>
+                <th>Button</th>
+            </tr>";
+        
+            while($row = mysqli_fetch_array($result))
+            {
+                $pid=$row['pid'];
+                $pname=$row['pname'];
+                $quantity=$row['quantity']; 
+                $price=$row['price'];
+                echo "<tr>";
+                    echo "<td>$pid</td>";
+                    echo "<td>$pname</td>";
+                    echo "<td>$quantity</td>";
+                    echo "<td>$price</td>";
+                    echo "<td><button id='bookbtn' name='$pid' onclick='book($pid)'>BOOK1</button></td>";
+                echo "</tr>";
+            }
+        echo "</table>";

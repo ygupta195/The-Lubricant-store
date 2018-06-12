@@ -1,0 +1,23 @@
+
+    <script>
+        function remove(id) {
+            if (confirm('Are you sure')) {
+                $.post('cartser.php', { pid: id });
+                alert('item deleted from cart');
+                location.reload();
+            }
+        }
+    </script>
+
+
+
+    <?php
+$db=mysqli_connect("localhost","root","") or die("Unable to connect");
+mysqli_select_db($db,'panda');
+
+$id = $_POST['pid'];
+$qryremove="UPDATE cart SET qty=qty-1 WHERE cart.pid=$id";
+$removeres=mysqli_query($db,$qryremove);
+$qrydelete="DELETE FROM cart WHERE cart.qty=0";
+$deleteres=mysqli_query($db,$qrydelete);
+?>
