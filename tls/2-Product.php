@@ -252,7 +252,7 @@
                 width: 234px;
                 text-align: center;
                 height: 57px;
-            }                }
+            }            
             h3{
                 position:relative;
                 bottom:-60px;
