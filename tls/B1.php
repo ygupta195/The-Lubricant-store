@@ -34,7 +34,7 @@
     <?php
     // session_start();
     
-$conn=new mysqli("localhost","root","","tls");
+$conn=new mysqli("localhost","root","qwaszxQ12@","tls");
 if(mysqli_connect_error()){
     echo "Connection unsuccessfull";
 
